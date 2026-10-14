@@ -15,16 +15,17 @@
 <!-- 1 · TITLE ============================================================ -->
 <section class="scene" id="title" data-theme="light" data-steps="0" data-time="30" data-name-en="Title" data-name="Başlık">
   <canvas class="bgcgr" id="bgcgr" aria-hidden="true"></canvas>
+  <img class="title-qr" src="assets/img/qr.svg" alt="QR: drferhatu.github.io/tiptekno26-cgr-coronavirus">
   <div class="frame">
-    <img class="logo-tiptekno" src="assets/img/tiptekno26-logo.png" alt="TIPTEKNO'26 — Tıp Teknolojileri Kongresi, 15–17 Ekim 2026, Gaziantep">
+    <img class="logo-tiptekno tr" src="assets/img/tiptekno26-logo.png" alt="TIPTEKNO'26 — Tıp Teknolojileri Kongresi, 15–17 Ekim 2026, Gaziantep"><img class="logo-tiptekno en" src="assets/img/tiptekno26-logo-en.png" alt="TIPTEKNO'26 — Medical Technologies Congress, 15–17 October 2026, Gaziantep">
     <p class="eyebrow"><span class="tr">Özel Oturum · Tıp Teknolojilerinde Kaos Teorisi</span><span class="en">Special Session · Chaos Theory in Medical Technologies</span></p>
     <h1 class="hero"><span class="tr">Bir virüsü,<br><span class="grad">resmine bakarak</span> tanımak.</span><span class="en">Recognising a virus<br><span class="grad">from its picture.</span></span></h1>
     <p class="paper-title">Chaos Game Representation as a Lightweight Genomic Signature for Alignment-Free Classification of Coronaviruses</p>
     <div class="authors">
       <img src="assets/img/firat-emblem.png" alt="Fırat Üniversitesi" class="emblem">
       <div>
-        <strong>Ferhat Uçar · Elifnur Yüksel</strong><br>
-        <span class="tr">Fırat Üniversitesi · Yazılım Mühendisliği</span><span class="en">Fırat University · Software Engineering</span>
+        <strong>Ferhat Uçar<sup>1</sup> · Elifnur Yüksel<sup>2</sup></strong><br>
+        <span class="tr"><sup>1</sup>Teknoloji Fakültesi · <sup>2</sup>Fen Bilimleri Enstitüsü<br>Yazılım Mühendisliği · Fırat Üniversitesi</span><span class="en"><sup>1</sup>Faculty of Technology · <sup>2</sup>Graduate School of Natural and Applied Sciences<br>Software Engineering · Fırat University</span>
       </div>
     </div>
   </div>
@@ -206,7 +207,7 @@
   <div class="frame two">
     <div>
       <p class="eyebrow"><span class="tr">Sınıflandırıcı · doğrusal SVM</span><span class="en">The classifier · linear SVM</span></p>
-      <h2 class="h2s"><span class="tr">Her genom bir nokta.<br>Aileler kendi bölgelerinde.</span><span class="en">Each genome is a point.<br>Families gather in their own regions.</span></h2>
+      <h2 class="h2s"><span class="tr">Her genom bir nokta.<br>Aileler kendi bölgelerinde.</span><span class="en">Each genome is a point.<br>Families cluster together.</span></h2>
       <canvas id="pcaCanvas" class="pca"></canvas>
       <p class="caption"><span class="tr">1.024 boyutlu uzayın iki boyutlu gölgesi (PCA, k = 5). İki boyutta bile gruplar seçiliyor; ayrımı sınıflandırıcı 1.024 boyutun tamamında yapıyor.</span><span class="en">A 2-D shadow of the 1,024-dimensional space (PCA, k = 5). Groups show even in 2-D; the classifier separates them using all 1,024 dimensions.</span></p>
       <div class="legend" id="pcaLegend"></div>
@@ -360,10 +361,11 @@
       <p class="eyebrow"><span class="tr">Kod, veri listeleri ve bu sunum</span><span class="en">Code, data lists and this presentation</span></p>
       <h1 class="hero"><span class="tr">Teşekkürler.</span><span class="en">Thank you.</span></h1>
       <p class="lead"><span class="tr">Sorularınızı memnuniyetle alırım.</span><span class="en">Happy to take your questions.</span></p>
+      <p class="talkdate"><span class="tr">15 Ekim 2026 · Gaziantep · Sunan: Ferhat Uçar</span><span class="en">15 October 2026 · Gaziantep · Presenter: Ferhat Uçar</span></p>
       <p class="links"><span id="pagesUrl"></span><br><span id="repoUrl"></span><br>fucar@firat.edu.tr · 251137146@firat.edu.tr</p>
       <div class="logos">
         <img src="assets/img/firat-emblem.png" alt="Fırat Üniversitesi" class="emblem">
-        <img src="assets/img/tiptekno26-logo.png" alt="TIPTEKNO'26" class="logo-tiptekno small">
+        <img src="assets/img/tiptekno26-logo.png" alt="TIPTEKNO'26" class="logo-tiptekno small tr"><img src="assets/img/tiptekno26-logo-en.png" alt="TIPTEKNO'26" class="logo-tiptekno small en">
       </div>
     </div>
     <div class="qrbox"><img src="assets/img/qr.svg" alt="QR" class="qr"><p class="caption center"><span class="tr">Sunumu telefonunuzda açın</span><span class="en">Open the slides on your phone</span></p></div>
@@ -378,7 +380,7 @@
 
 <!-- chrome -->
 <div id="chrome">
-  <div class="foot-left">TIPTEKNO'26 · Uçar &amp; Yüksel · <span class="tr">Fırat Üniversitesi</span><span class="en">Fırat University</span></div>
+  <div class="foot-left">TIPTEKNO'26 · <span class="tr">15 Ekim 2026 · Sunan: Ferhat Uçar</span><span class="en">15 October 2026 · Presenter: Ferhat Uçar</span></div>
   <div class="foot-right">
     <button id="langBtn" type="button" title="L">EN</button>
     <span id="counter">01 / 16</span>

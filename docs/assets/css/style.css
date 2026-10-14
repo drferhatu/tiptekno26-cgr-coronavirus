@@ -75,12 +75,20 @@ h2.h2s { font-size: calc(var(--u) * 3.4); }
   -webkit-mask-image: radial-gradient(circle at 60% 50%, #000 30%, transparent 72%);
           mask-image: radial-gradient(circle at 60% 50%, #000 30%, transparent 72%);
 }
-.logo-tiptekno { height: calc(var(--u) * 6.2); width: auto; align-self: flex-start; margin-bottom: calc(var(--u) * 2.4); }
-.logo-tiptekno.small { height: calc(var(--u) * 4.2); margin: 0; }
+.logo-tiptekno { height: calc(var(--u) * 9.2); width: auto; align-self: flex-start; margin-bottom: calc(var(--u) * 2); }
+.logo-tiptekno.small { height: calc(var(--u) * 6.6); margin: 0; }
+.title-qr {
+  position: absolute; right: calc(var(--u) * 6.5); bottom: calc(var(--u) * 6.5);
+  width: calc(var(--u) * 14); background: #fff; padding: calc(var(--u) * 1);
+  border-radius: calc(var(--u) * 1.4); box-shadow: 0 10px 34px rgba(0,0,0,.12);
+}
+.authors sup { font-size: .68em; line-height: 0; }
+.talkdate { font-size: calc(var(--u) * 1.5); color: var(--fg2); margin: calc(var(--u) * 1) 0 0; }
 .paper-title { font-size: calc(var(--u) * 1.55); line-height: 1.4; color: var(--fg2); max-width: calc(var(--u) * 60); margin: 0 0 calc(var(--u) * 2.6); }
 .authors { display: flex; align-items: center; gap: calc(var(--u) * 1.4); font-size: calc(var(--u) * 1.55); line-height: 1.45; color: var(--fg2); }
 .authors strong { color: var(--fg); font-weight: 600; }
-.emblem { height: calc(var(--u) * 4.6); width: auto; border-radius: 4px; }
+.emblem { height: calc(var(--u) * 5.8); width: auto; border-radius: 4px; }
+.logos .emblem { height: calc(var(--u) * 6.6); }
 
 /* ---------- question ---------- */
 .ticker {
@@ -151,8 +159,8 @@ h2.h2s { font-size: calc(var(--u) * 3.4); }
 .sig-grid figcaption { margin-top: calc(var(--u) * 1); font-size: calc(var(--u) * 1.6); font-weight: 600; font-style: italic; color: var(--c); }
 
 /* ---------- classifier ---------- */
-canvas.pca { width: 100%; aspect-ratio: 1.45; display: block; background: var(--card); border-radius: calc(var(--u) * 1.4); box-shadow: 0 1px 2px rgba(0,0,0,.04), 0 8px 28px rgba(0,0,0,.06); }
-.legend { display: flex; flex-wrap: wrap; gap: calc(var(--u) * 1.4); margin-top: calc(var(--u) * .8); font-size: calc(var(--u) * 1.25); color: var(--fg2); }
+canvas.pca { width: 100%; aspect-ratio: 1.9; display: block; background: var(--card); border-radius: calc(var(--u) * 1.4); box-shadow: 0 1px 2px rgba(0,0,0,.04), 0 8px 28px rgba(0,0,0,.06); }
+.legend { display: grid; grid-template-columns: auto auto; justify-content: start; gap: calc(var(--u) * .3) calc(var(--u) * 2.4); margin-top: calc(var(--u) * .8); font-size: calc(var(--u) * 1.25); color: var(--fg2); }
 .legend i { display: inline-block; width: .7em; height: .7em; border-radius: 50%; margin-right: .4em; vertical-align: .02em; }
 .bigstat { font-size: calc(var(--u) * 9.5); font-weight: 700; letter-spacing: -.04em; line-height: 1; }
 table.cm { border-collapse: separate; border-spacing: 4px; font-size: calc(var(--u) * 1.35); margin-left: -4px; }
@@ -195,7 +203,7 @@ table.cm caption { caption-side: top; text-align: left; font-size: calc(var(--u)
 
 /* ---------- unseen ---------- */
 .fallwrap { position: relative; width: 100%; }
-#fallCanvas { width: 100%; height: calc(var(--u) * 22); display: block; }
+#fallCanvas { width: 100%; height: calc(var(--u) * 19); display: block; }
 .bins { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
 .bins div { text-align: center; padding-top: calc(var(--u) * .7); font-size: calc(var(--u) * 1.45); font-weight: 600; font-style: italic; color: var(--c); }
 .bigline { font-size: calc(var(--u) * 3); font-weight: 700; letter-spacing: -.02em; margin: calc(var(--u) * 1.8) 0 0; font-variant-numeric: tabular-nums; }
@@ -204,7 +212,7 @@ table.cm caption { caption-side: top; text-align: left; font-size: calc(var(--u)
 
 /* ---------- fragment chart ---------- */
 .chartwrap { width: 100%; }
-#fragChart { width: 100%; height: calc(var(--u) * 26); display: block; overflow: visible; }
+#fragChart { width: 100%; height: calc(var(--u) * 22); display: block; overflow: visible; }
 #fragChart .axis { stroke: var(--line); stroke-width: 1.5; }
 #fragChart .grid { stroke: var(--line); stroke-width: 1; stroke-dasharray: 3 5; }
 #fragChart text { fill: var(--fg2); font-family: var(--sans); font-size: 19px; }
@@ -301,7 +309,7 @@ body.presenter #presenter { display: grid; grid-template-rows: auto 1fr auto; he
   .statpair { grid-template-columns: auto auto auto; }
   .statpair .pairnote { grid-column: 1 / -1; }
   .cgrbox, .cgrbox.big { width: 72vw; }
-  .bgcgr { display: none; }
+  .bgcgr, .title-qr { display: none; }
   #navbtns { top: auto; bottom: 7vh; transform: none; flex-direction: row; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -323,3 +331,12 @@ body.notesmode #notesDoc { display: block; max-width: 760px; margin: 0 auto; pad
 #notesDoc p { margin: .3em 0; }
 #notesDoc b { color: var(--accent); }
 @media print { body.notesmode #notesDoc { padding: 0; font-size: 12pt; } }
+
+/* touch screens: the arrows and the language switch stay visible, a little larger */
+@media (hover: none), (pointer: coarse) {
+  #navbtns button { width: 52px; height: 52px; font-size: 28px; }
+  #chrome button { padding: .35em 1em; }
+}
+
+/* the fragment explanation runs under a full-width chart: let it use the width, keep it to two lines */
+#fragment .lead { max-width: calc(var(--u) * 86); }

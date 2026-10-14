@@ -743,9 +743,20 @@
   $('nextBtn').addEventListener('click', next);
   $('langBtn').addEventListener('click', () => setLang(lang === 'tr' ? 'en' : 'tr'));
 
+  // Hide the arrows, language switch and cursor after a pause -- for mouse users only.
+  // A touch screen sends no mousemove to bring them back, so there they always stay.
+  const COARSE = window.matchMedia && matchMedia('(hover: none), (pointer: coarse)').matches;
   let idleT = 0;
-  const wake = () => { document.body.classList.remove('idle'); clearTimeout(idleT); idleT = setTimeout(() => document.body.classList.add('idle'), 2500); };
-  window.addEventListener('mousemove', wake); wake();
+  const wake = () => {
+    document.body.classList.remove('idle'); clearTimeout(idleT);
+    if (!COARSE) idleT = setTimeout(() => document.body.classList.add('idle'), 2500);
+  };
+  window.addEventListener('mousemove', (e) => { if (!(e.sourceCapabilities && e.sourceCapabilities.firesTouchEvents)) wake(); });
+  window.addEventListener('pointerdown', (e) => {
+    if (e.pointerType === 'mouse') wake();
+    else { clearTimeout(idleT); document.body.classList.remove('idle'); }   // touch or pen: keep controls
+  });
+  wake();
 
   let rT = 0;
   window.addEventListener('resize', () => {
