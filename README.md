@@ -86,3 +86,7 @@ Speaker notes as a single page, e.g. for a phone: <https://drferhatu.github.io/t
   year      = {2026}
 }
 ```
+
+## License
+
+Code released under the [MIT License](LICENSE). The TIPTEKNO'26 and Fırat University logos in `docs/assets/img/` belong to their owners and are not covered by this license.
