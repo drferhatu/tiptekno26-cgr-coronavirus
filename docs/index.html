@@ -13,7 +13,7 @@
 <main id="deck">
 
 <!-- 1 · TITLE ============================================================ -->
-<section class="scene" id="title" data-theme="light" data-steps="0" data-time="30" data-name="Başlık">
+<section class="scene" id="title" data-theme="light" data-steps="0" data-time="30" data-name-en="Title" data-name="Başlık">
   <canvas class="bgcgr" id="bgcgr" aria-hidden="true"></canvas>
   <div class="frame">
     <img class="logo-tiptekno" src="assets/img/tiptekno26-logo.png" alt="TIPTEKNO'26 — Tıp Teknolojileri Kongresi, 15–17 Ekim 2026, Gaziantep">
@@ -29,13 +29,15 @@
     </div>
   </div>
   <aside class="notes">
-    <p>Merhaba, ben Ferhat Uçar; Fırat Üniversitesi Yazılım Mühendisliği. Bu çalışmayı yüksek lisans öğrencim Elifnur Yüksel ile yaptık.</p>
-    <p>Özel oturumun <b>genomik ölçeğindeyiz</b>. Bugün tek bir şeyi göstermek istiyorum: bir virüsün hangi aileden olduğunu, onu hizalamadan, yalnızca genomundan çizdiğimiz bir <b>resme</b> bakarak nasıl söyleyebileceğimizi.</p>
+    <div class="tr"><p>Merhaba, ben Ferhat Uçar; Fırat Üniversitesi Yazılım Mühendisliği. Bu çalışmayı yüksek lisans öğrencim Elifnur Yüksel ile yaptık.</p>
+    <p>Özel oturumun <b>genomik ölçeğindeyiz</b>. Bugün tek bir şeyi göstermek istiyorum: bir virüsün hangi aileden olduğunu, onu hizalamadan, yalnızca genomundan çizdiğimiz bir <b>resme</b> bakarak nasıl söyleyebileceğimizi.</p></div>
+    <div class="en"><p>Hello, I'm Ferhat Uçar from Software Engineering at Fırat University. I did this work with my MSc student Elifnur Yüksel.</p>
+<p>We are at the <b>genomic scale</b> of the special session. Today I want to show you one thing: how we can tell which family a virus belongs to without aligning it — just by looking at a <b>picture</b> we draw from its genome.</p></div>
   </aside>
 </section>
 
 <!-- 2 · QUESTION ========================================================= -->
-<section class="scene" id="question" data-theme="light" data-steps="2" data-time="40" data-name="Soru">
+<section class="scene" id="question" data-theme="light" data-steps="2" data-time="40" data-name-en="Question" data-name="Soru">
   <div class="frame">
     <p class="eyebrow"><span class="tr">Soru</span><span class="en">The question</span></p>
     <h2><span class="tr">Elinize yeni bir virüs genomu geldi.<br><span class="grad">Hangi aileden?</span></span><span class="en">A new viral genome arrives.<br><span class="grad">Which family is it from?</span></span></h2>
@@ -46,13 +48,15 @@
     <p class="lead b" data-b="2"><span class="tr">Ailesini bilmek; <b>hangi testin, hangi primerin, hangi analizin</b> seçileceğini belirler. Salgında ilk sorulan soru budur.</span><span class="en">Knowing the family decides <b>which test, which primers and which analysis</b> come next. In an outbreak, it is the first question asked.</span></p>
   </div>
   <aside class="notes">
-    <p>Senaryo şu: elinize yeni bir virüs genomu geldi. Yaklaşık <b>30 bin harflik</b>, dört harfli bir alfabeyle yazılmış bir metin: A, C, G, T. [tıkla → akan dizi]</p>
-    <p>İlk sorulan soru genelde "hangi soy" değil, <b>"hangi aile"</b>. Çünkü hangi testi, hangi primeri kullanacağımızı bu belirliyor. [tıkla]</p>
+    <div class="tr"><p>Senaryo şu: elinize yeni bir virüs genomu geldi. Yaklaşık <b>30 bin harflik</b>, dört harfli bir alfabeyle yazılmış bir metin: A, C, G, T. [tıkla → akan dizi]</p>
+    <p>İlk sorulan soru genelde "hangi soy" değil, <b>"hangi aile"</b>. Çünkü hangi testi, hangi primeri kullanacağımızı bu belirliyor. [tıkla]</p></div>
+    <div class="en"><p>Here is the scenario: a new viral genome arrives. It is a text of about <b>30,000 letters</b>, written in a four-letter alphabet: A, C, G, T. [click → scrolling sequence]</p>
+<p>The first question is usually not "which strain" but <b>"which family"</b>, because that decides which test and which primers we use. [click]</p></div>
   </aside>
 </section>
 
 <!-- 3 · ALIGNMENT ======================================================== -->
-<section class="scene" id="alignment" data-theme="light" data-steps="2" data-time="40" data-name="Hizalama">
+<section class="scene" id="alignment" data-theme="light" data-steps="2" data-time="40" data-name-en="Alignment" data-name="Hizalama">
   <div class="frame">
     <p class="eyebrow"><span class="tr">Bugünkü yol</span><span class="en">The usual way</span></p>
     <h2><span class="tr">Harf harf hizalamak.</span><span class="en">Line it up, letter by letter.</span></h2>
@@ -66,14 +70,17 @@
     <p class="lead b" data-b="2"><span class="tr"><b>Hizalamasız yol:</b> diziyi hizalamadan, kısa harf gruplarının ne sıklıkla geçtiğiyle özetlemek.</span><span class="en"><b>The alignment-free way:</b> summarise the sequence by how often short letter groups occur — no alignment at all.</span> <span class="ref">Zielezinski et al., Genome Biol., 2017</span></p>
   </div>
   <aside class="notes">
-    <p>Klasik yol <b>hizalama</b>: yeni diziyi bilinen bir referansla harf harf üst üste koymak. [tıkla]</p>
+    <div class="tr"><p>Klasik yol <b>hizalama</b>: yeni diziyi bilinen bir referansla harf harf üst üste koymak. [tıkla]</p>
     <p>Doğru bir yöntem; ama ağır, her zaman bir referans istiyor ve pandemide olduğu gibi binlerce genom geldiğinde yavaşlıyor. [tıkla]</p>
-    <p><b>Hizalamasız</b> yöntemler diziyi okumadan, kısa harf gruplarının sıklığıyla özetliyor. Biz bunun <b>kaos teorisinden</b> gelen bir versiyonunu kullandık.</p>
+    <p><b>Hizalamasız</b> yöntemler diziyi okumadan, kısa harf gruplarının sıklığıyla özetliyor. Biz bunun <b>kaos teorisinden</b> gelen bir versiyonunu kullandık.</p></div>
+    <div class="en"><p>The classic route is <b>alignment</b>: laying the new sequence over a known reference, letter by letter. [click]</p>
+<p>It is accurate, but heavy; it always needs a reference, and it slows down when thousands of genomes arrive at once, as in the pandemic. [click]</p>
+<p><b>Alignment-free</b> methods summarise the sequence by how often short letter groups occur, without aligning it. We used a version that comes from <b>chaos theory</b>.</p></div>
   </aside>
 </section>
 
 <!-- 4 · RULE (dark) ====================================================== -->
-<section class="scene" id="rule" data-theme="dark" data-steps="8" data-time="60" data-name="Kaos oyunu: kural">
+<section class="scene" id="rule" data-theme="dark" data-steps="8" data-time="60" data-name-en="Chaos game: the rule" data-name="Kaos oyunu: kural">
   <div class="frame two">
     <div>
       <p class="eyebrow"><span class="tr">Fikir · Jeffrey, 1990</span><span class="en">The idea · Jeffrey, 1990</span></p>
@@ -91,14 +98,17 @@
     </div>
   </div>
   <aside class="notes">
-    <p>Kural çok basit. Bir kare; dört köşesine dört harf. <b>Ortadan başlıyoruz.</b> [tıkla]</p>
+    <div class="tr"><p>Kural çok basit. Bir kare; dört köşesine dört harf. <b>Ortadan başlıyoruz.</b> [tıkla]</p>
     <p>Diziden bir harf okuyoruz; o harfin köşesine doğru <b>yolun yarısı kadar</b> gidip bir nokta koyuyoruz. Sonraki harf… yine yarısı kadar. [her tık bir harf — 6 harf]</p>
-    <p>Bu, 1990'da Jeffrey'nin önerdiği <b>Kaos Oyunu Gösterimi</b>. Şimdi 500 harf için hızlandıralım. [tıkla]</p>
+    <p>Bu, 1990'da Jeffrey'nin önerdiği <b>Kaos Oyunu Gösterimi</b>. Şimdi 500 harf için hızlandıralım. [tıkla]</p></div>
+    <div class="en"><p>The rule is very simple. A square, with the four letters at its four corners. <b>We start in the middle.</b> [click]</p>
+<p>We read one letter and move <b>halfway</b> towards that letter's corner, then drop a dot. Next letter… halfway again. [each click is one letter — 6 letters]</p>
+<p>This is the <b>Chaos Game Representation</b> proposed by Jeffrey in 1990. Now let's fast-forward through 500 letters. [click]</p></div>
   </aside>
 </section>
 
 <!-- 5 · CGR (dark) ======================================================= -->
-<section class="scene" id="cgr" data-theme="dark" data-steps="2" data-time="45" data-name="Bütün genom">
+<section class="scene" id="cgr" data-theme="dark" data-steps="2" data-time="45" data-name-en="Whole genome" data-name="Bütün genom">
   <div class="frame two">
     <div>
       <p class="eyebrow"><span class="tr">Kaos Oyunu Gösterimi (CGR)</span><span class="en">Chaos Game Representation (CGR)</span></p>
@@ -116,14 +126,17 @@
     </div>
   </div>
   <aside class="notes">
-    <p>[tıkla] Bütün genomu, yaklaşık <b>30 bin adımı</b> oynatınca ortaya bu çıkıyor.</p>
+    <div class="tr"><p>[tıkla] Bütün genomu, yaklaşık <b>30 bin adımı</b> oynatınca ortaya bu çıkıyor.</p>
     <p>Rastgele bir bulut değil; boşluklar, tekrar eden desenler var. Bunlar genomun "kelime alışkanlığını" gösteriyor. [isterseniz 229E, MERS, IBV, PDCoV düğmelerine tıklayın — her biri gerçek bir GenBank genomu]</p>
-    <p>[tıkla] Aynı türde tutarlı, türler arasında farklı: literatürde buna <b>genomik imza</b> deniyor.</p>
+    <p>[tıkla] Aynı türde tutarlı, türler arasında farklı: literatürde buna <b>genomik imza</b> deniyor.</p></div>
+    <div class="en"><p>[click] Play the whole genome — about <b>30,000 steps</b> — and this is what appears.</p>
+<p>It is not a random cloud: there are gaps and repeating patterns. They show the genome's "word habits". [optionally click 229E, MERS, IBV, PDCoV — each one is a real GenBank genome]</p>
+<p>[click] Stable within a species, different between species: the literature calls this a <b>genomic signature</b>.</p></div>
   </aside>
 </section>
 
 <!-- 6 · FCGR (dark) ====================================================== -->
-<section class="scene" id="fcgr" data-theme="dark" data-steps="4" data-time="50" data-name="Resimden sayılara">
+<section class="scene" id="fcgr" data-theme="dark" data-steps="4" data-time="50" data-name-en="Picture to numbers" data-name="Resimden sayılara">
   <div class="frame two">
     <div>
       <p class="eyebrow"><span class="tr">Resimden sayılara · FCGR · Almeida, 2001</span><span class="en">From picture to numbers · FCGR · Almeida, 2001</span></p>
@@ -143,14 +156,17 @@
     </div>
   </div>
   <aside class="notes">
-    <p>Resmi bilgisayarın kullanabileceği sayılara çevirmek için kareyi <b>ızgaraya bölüp</b> her hücredeki noktaları sayıyoruz.</p>
+    <div class="tr"><p>Resmi bilgisayarın kullanabileceği sayılara çevirmek için kareyi <b>ızgaraya bölüp</b> her hücredeki noktaları sayıyoruz.</p>
     <p>[tıkla] Dört hücrede bu, tek harflerin oranı. [tıkla] On altı hücrede iki harflik kelimeler. Bakın: <b>CG hücresi en koyulardan</b>. Koronavirüs genomlarında CG ikilisi az bulunur (CpG baskılanması); resim bunu kendiliğinden gösteriyor. [tıkla] Altmış dört hücrede üç harflik kelimeler.</p>
-    <p>[tıkla] Yani k harflik ızgara <b>4 üzeri k</b> sayı veriyor. Bu sayılar bizim özniteliklerimiz: <b>FCGR</b>.</p>
+    <p>[tıkla] Yani k harflik ızgara <b>4 üzeri k</b> sayı veriyor. Bu sayılar bizim özniteliklerimiz: <b>FCGR</b>.</p></div>
+    <div class="en"><p>To turn the picture into numbers a computer can use, we <b>cut the square into a grid</b> and count the dots in each cell.</p>
+<p>[click] With four cells, this is the share of each single letter. [click] With sixteen cells, two-letter words. Look: <b>the CG cell is one of the darkest</b>. Coronavirus genomes carry few CG pairs (CpG suppression), and the picture shows it on its own. [click] With sixty-four cells, three-letter words.</p>
+<p>[click] So a k-letter grid gives <b>4 to the power k</b> numbers. These numbers are our features: <b>FCGR</b>.</p></div>
   </aside>
 </section>
 
 <!-- 7 · DATA ============================================================= -->
-<section class="scene" id="data" data-theme="light" data-steps="1" data-time="35" data-name="Veri">
+<section class="scene" id="data" data-theme="light" data-steps="1" data-time="35" data-name-en="Data" data-name="Veri">
   <div class="frame">
     <p class="eyebrow"><span class="tr">Veri · NCBI GenBank / NCBI Virus</span><span class="en">Data · NCBI GenBank / NCBI Virus</span></p>
     <h2><span class="num" data-num="derived.total"></span> <span class="tr">tam genom. Dört aile. <span class="grad">Dengeli.</span></span><span class="en">complete genomes. Four families. <span class="grad">Balanced.</span></span></h2>
@@ -159,14 +175,17 @@
     <p class="caption"><span class="tr">Tam genomlar (<span class="num" data-num="lengthRange.0"></span>–<span class="num" data-num="lengthRange.1"></span> harf) · tohumlu (seed = 42) rastgele, dengeli örneklem · birebir kopyalar ayıklandı · tüm accession numaraları paylaşıldı</span><span class="en">Complete genomes (<span class="num" data-num="lengthRange.0"></span>–<span class="num" data-num="lengthRange.1"></span> letters) · seeded (seed = 42) random, balanced sample · exact duplicates removed · all accession numbers released</span></p>
   </div>
   <aside class="notes">
-    <p>Veri tamamen açık: NCBI'dan <b>976 tam koronavirüs genomu</b>, dört ailede dengeli.</p>
+    <div class="tr"><p>Veri tamamen açık: NCBI'dan <b>976 tam koronavirüs genomu</b>, dört ailede dengeli.</p>
     <p>Alfa'da insan soğuk algınlığı virüsleri, Beta'da SARS ve MERS, Gama'da tavuk bronşiti, Delta'da domuz deltakoronavirüsü.</p>
-    <p>[tıkla] Önemli bir detay: <b>SARS-CoV-2'yi hiç kullanmadık</b>; 100 genomu en baştan kenara koyduk. Birazdan göreceğiz.</p>
+    <p>[tıkla] Önemli bir detay: <b>SARS-CoV-2'yi hiç kullanmadık</b>; 100 genomu en baştan kenara koyduk. Birazdan göreceğiz.</p></div>
+    <div class="en"><p>The data are fully open: <b>976 complete coronavirus genomes</b> from NCBI, balanced across four families.</p>
+<p>Alpha holds the human common-cold viruses, Beta holds SARS and MERS, Gamma avian infectious bronchitis, Delta porcine deltacoronavirus.</p>
+<p>[click] One important detail: <b>we never used SARS-CoV-2</b>; we set 100 genomes aside from the start. You will see why in a moment.</p></div>
   </aside>
 </section>
 
 <!-- 8 · SIGNATURES ======================================================= -->
-<section class="scene" id="signatures" data-theme="light" data-steps="1" data-time="30" data-name="Dört imza">
+<section class="scene" id="signatures" data-theme="light" data-steps="1" data-time="30" data-name-en="Four signatures" data-name="Dört imza">
   <div class="frame">
     <p class="eyebrow"><span class="tr">Dört ailenin imzası</span><span class="en">Four family signatures</span></p>
     <h2><span class="tr">Her ailenin ortalama resmi.</span><span class="en">The average picture of each family.</span></h2>
@@ -175,13 +194,15 @@
     <p class="caption"><span class="tr">Her ailenin ortalama FCGR'si, k = 6 (4.096 hücre), log ölçek</span><span class="en">Mean FCGR of each family, k = 6 (4,096 cells), log scale</span></p>
   </div>
   <aside class="notes">
-    <p>Her ailenin ortalama resmine baktığımızda: <b>aynı dil bilgisi</b>, ama ince desenler farklı. Delta'yı gözle bile ayırabiliyorsunuz.</p>
-    <p>[tıkla] Sınıflandırıcının kullandığı tam da bu farklar.</p>
+    <div class="tr"><p>Her ailenin ortalama resmine baktığımızda: <b>aynı dil bilgisi</b>, ama ince desenler farklı. Delta'yı gözle bile ayırabiliyorsunuz.</p>
+    <p>[tıkla] Sınıflandırıcının kullandığı tam da bu farklar.</p></div>
+    <div class="en"><p>Look at the average picture of each family: <b>the same grammar</b>, but different fine patterns. You can even spot Delta by eye.</p>
+<p>[click] These are exactly the differences the classifier uses.</p></div>
   </aside>
 </section>
 
 <!-- 9 · CLASSIFIER ======================================================= -->
-<section class="scene" id="classifier" data-theme="light" data-steps="2" data-time="45" data-name="Sınıflandırıcı">
+<section class="scene" id="classifier" data-theme="light" data-steps="2" data-time="45" data-name-en="Classifier" data-name="Sınıflandırıcı">
   <div class="frame two">
     <div>
       <p class="eyebrow"><span class="tr">Sınıflandırıcı · doğrusal SVM</span><span class="en">The classifier · linear SVM</span></p>
@@ -202,14 +223,17 @@
     </div>
   </div>
   <aside class="notes">
-    <p>Her genom artık <b>1024 sayılık bir nokta</b>. Bu uzayı iki boyuta indirdiğimizde bile aileler kendi bölgelerinde toplanıyor; Alfa ile Beta iki boyutta biraz örtüşüyor, ama asıl ayrımı sınıflandırıcı <b>1024 boyutun tamamında</b> yapıyor.</p>
+    <div class="tr"><p>Her genom artık <b>1024 sayılık bir nokta</b>. Bu uzayı iki boyuta indirdiğimizde bile aileler kendi bölgelerinde toplanıyor; Alfa ile Beta iki boyutta biraz örtüşüyor, ama asıl ayrımı sınıflandırıcı <b>1024 boyutun tamamında</b> yapıyor.</p>
     <p>Bu yüzden en sade sınıflandırıcıyı, <b>doğrusal bir destek vektör makinesini</b> kullandık. [tıkla] Sonuç: beş katlı çapraz doğrulamada <b>yüzde 99,9</b>.</p>
-    <p>[tıkla] 976 genomdan <b>yalnızca biri</b> yanlış: bir Alfa, Gama sanılmış.</p>
+    <p>[tıkla] 976 genomdan <b>yalnızca biri</b> yanlış: bir Alfa, Gama sanılmış.</p></div>
+    <div class="en"><p>Each genome is now <b>a point made of 1,024 numbers</b>. Even when we squeeze this space into two dimensions, the families gather in their own regions; Alpha and Beta overlap a little in 2-D, but the classifier does the real separation using <b>all 1,024 dimensions</b>.</p>
+<p>That is why we used the simplest classifier, <b>a linear support vector machine</b>. [click] The result: <b>99.9 percent</b> in five-fold cross-validation.</p>
+<p>[click] Out of 976 genomes, <b>only one</b> is wrong: an Alpha read as a Gamma.</p></div>
   </aside>
 </section>
 
 <!-- 10 · PARSIMONY ======================================================= -->
-<section class="scene" id="parsimony" data-theme="light" data-steps="2" data-time="35" data-name="64 sayı">
+<section class="scene" id="parsimony" data-theme="light" data-steps="2" data-time="35" data-name-en="64 numbers" data-name="64 sayı">
   <div class="frame">
     <p class="eyebrow"><span class="tr">Şaşırtıcı olan</span><span class="en">The surprise</span></p>
     <h2><span class="grad">64</span> <span class="tr">sayı yetiyor.</span><span class="en">numbers are enough.</span></h2>
@@ -218,14 +242,17 @@
     <p class="lead b" data-b="2"><span class="tr">Tam genomda, ailenin kimliği <b>şaşırtıcı derecede küçük bir temsilden</b> geri kazanılabiliyor.</span><span class="en">On full genomes, family identity can be recovered from <b>a remarkably compact representation</b>.</span></p>
   </div>
   <aside class="notes">
-    <p>Bizi asıl şaşırtan şu oldu: sayıyı küçültsek de sonuç neredeyse değişmiyor.</p>
+    <div class="tr"><p>Bizi asıl şaşırtan şu oldu: sayıyı küçültsek de sonuç neredeyse değişmiyor.</p>
     <p>[tıkla] Yalnızca <b>64 sayıyla</b>, yani üç harflik kelimelerle bile <b>yüzde 99,8</b>. Bunlar dört ailenin 64 sayılık imzaları.</p>
-    <p>[tıkla] Tam genomda bir ailenin kimliği çok küçük bir temsilden geri kazanılabiliyor.</p>
+    <p>[tıkla] Tam genomda bir ailenin kimliği çok küçük bir temsilden geri kazanılabiliyor.</p></div>
+    <div class="en"><p>What really surprised us: shrinking the number of features hardly changes the result.</p>
+<p>[click] With only <b>64 numbers</b> — three-letter words — we still get <b>99.8 percent</b>. These are the 64-number signatures of the four families.</p>
+<p>[click] On full genomes, a family's identity can be recovered from a remarkably compact representation.</p></div>
   </aside>
 </section>
 
 <!-- 11 · SPECIES-AWARE =================================================== -->
-<section class="scene" id="species" data-theme="light" data-steps="2" data-time="40" data-name="Tür-farkında test">
+<section class="scene" id="species" data-theme="light" data-steps="2" data-time="40" data-name-en="Species-aware test" data-name="Tür-farkında test">
   <div class="frame">
     <p class="eyebrow"><span class="tr">Kendimizi kandırıyor muyuz?</span><span class="en">Are we fooling ourselves?</span></p>
     <h2 class="h2s"><span class="tr">Aynı türün kopyaları hem eğitimde<br>hem testte olursa?</span><span class="en">What if copies of one species sit<br>in both training and test?</span></h2>
@@ -238,14 +265,17 @@
     </div>
   </div>
   <aside class="notes">
-    <p>Haklı bir soru: aynı türün neredeyse aynı kopyaları hem eğitimde hem testte olursa, model aileyi değil <b>kopyayı</b> tanıyor olabilir. [tıkla]</p>
+    <div class="tr"><p>Haklı bir soru: aynı türün neredeyse aynı kopyaları hem eğitimde hem testte olursa, model aileyi değil <b>kopyayı</b> tanıyor olabilir. [tıkla]</p>
     <p>Bunu test ettik: genomları <b>156 tür grubuna</b> ayırdık; bir tür ya tamamen eğitimde ya tamamen testte. [tıkla]</p>
-    <p>Doğruluk <b>99,9'dan 99,7'ye</b> indi; yani neredeyse değişmedi. İmza gerçekten aile düzeyinde.</p>
+    <p>Doğruluk <b>99,9'dan 99,7'ye</b> indi; yani neredeyse değişmedi. İmza gerçekten aile düzeyinde.</p></div>
+    <div class="en"><p>A fair question: if near-identical copies of the same species sit in both training and test, the model may be recognising <b>the copy</b>, not the family. [click]</p>
+<p>We tested this: we grouped the genomes into <b>156 species</b>; each species is either entirely in training or entirely in test. [click]</p>
+<p>Accuracy went from <b>99.9 to 99.7</b> — almost unchanged. The signature really works at the family level.</p></div>
   </aside>
 </section>
 
 <!-- 12 · UNSEEN (dark) =================================================== -->
-<section class="scene" id="unseen" data-theme="dark" data-steps="2" data-time="35" data-name="Görülmemiş virüs">
+<section class="scene" id="unseen" data-theme="dark" data-steps="2" data-time="35" data-name-en="Unseen virus" data-name="Görülmemiş virüs">
   <div class="frame">
     <p class="eyebrow"><span class="tr">Hiç görmediği bir virüs</span><span class="en">A virus it has never seen</span></p>
     <h2><span class="tr">Model <span class="sarsc">SARS-CoV-2</span>'yi hiç görmedi.</span><span class="en">The model never saw <span class="sarsc">SARS-CoV-2</span>.</span></h2>
@@ -257,14 +287,17 @@
     <p class="lead b" data-b="2"><span class="tr">Doğru aile. Eğitimdeki <b>diğer betakoronavirüslerin imzası</b> yetti.</span><span class="en">The right family. The <b>signature of the other betacoronaviruses</b> was enough.</span></p>
   </div>
   <aside class="notes">
-    <p>Ve en sevdiğim deney: model <b>SARS-CoV-2'yi hiç görmedi</b>. Kenara koyduğumuz 100 genomu verdik. [tıkla]</p>
+    <div class="tr"><p>Ve en sevdiğim deney: model <b>SARS-CoV-2'yi hiç görmedi</b>. Kenara koyduğumuz 100 genomu verdik. [tıkla]</p>
     <p><b>Yüzde yüzü Betakoronavirüs'e</b> gitti; doğru aileye. [tıkla]</p>
-    <p>Eğitimdeki diğer betakoronavirüslerin imzası yetti.</p>
+    <p>Eğitimdeki diğer betakoronavirüslerin imzası yetti.</p></div>
+    <div class="en"><p>And my favourite experiment: the model <b>never saw SARS-CoV-2</b>. We gave it the 100 genomes we had set aside. [click]</p>
+<p><b>All one hundred went to Betacoronavirus</b> — the right family. [click]</p>
+<p>The signature of the other betacoronaviruses in training was enough.</p></div>
   </aside>
 </section>
 
 <!-- 13 · FRAGMENTS ======================================================= -->
-<section class="scene" id="fragment" data-theme="light" data-steps="3" data-time="50" data-name="Kısa parçalar">
+<section class="scene" id="fragment" data-theme="light" data-steps="3" data-time="50" data-name-en="Short fragments" data-name="Kısa parçalar">
   <div class="frame">
     <p class="eyebrow"><span class="tr">Gerçek hayat · kısa parçalar</span><span class="en">Real life · short fragments</span></p>
     <h2 class="h2s"><span class="tr">Elinizde tam genom değil,<br>kısa bir parça varsa?</span><span class="en">What if you only have<br>a short piece?</span></h2>
@@ -272,14 +305,17 @@
     <p class="lead b" data-b="3"><span class="tr">k = 3 kısa parçada kararlı ama yeterince ayırt edici değil; k = 5 daha seyrek ama aileye özgü ince deseni taşıyor. <b>k'yı beklenen okuma uzunluğuna göre seçin.</b></span><span class="en">k = 3 is stable on a short piece but not discriminative enough; k = 5 is sparser yet carries the family-specific fine pattern. <b>Choose k from the expected read length.</b></span></p>
   </div>
   <aside class="notes">
-    <p>Gerçek hayatta elinizde her zaman tam genom olmuyor; kısa okumalar oluyor. Modeli <b>tam genomla eğitip kısa parçalarla</b> test ettik.</p>
+    <div class="tr"><p>Gerçek hayatta elinizde her zaman tam genom olmuyor; kısa okumalar oluyor. Modeli <b>tam genomla eğitip kısa parçalarla</b> test ettik.</p>
     <p>[tıkla] k=3: 1000 harflik bir parçada yüzde 57'de kalıyor. [tıkla] k=5 ise yüzde 91'i koruyor.</p>
-    <p>[tıkla] Çünkü üç harflik özet kısa parçada kararlı ama yeterince ayırt edici değil; beş harflik özet daha seyrek ama aileye özgü ince deseni taşıyor. Tam genomda en küçük k; kısa okumada daha yüksek k.</p>
+    <p>[tıkla] Çünkü üç harflik özet kısa parçada kararlı ama yeterince ayırt edici değil; beş harflik özet daha seyrek ama aileye özgü ince deseni taşıyor. Tam genomda en küçük k; kısa okumada daha yüksek k.</p></div>
+    <div class="en"><p>In real life you do not always have a full genome; you have short reads. We trained the model on <b>full genomes and tested it on short fragments</b>.</p>
+<p>[click] k=3: on a 1,000-letter fragment it drops to 57 percent. [click] k=5 keeps 91 percent.</p>
+<p>[click] The three-letter summary is stable on a short piece but not discriminative enough; the five-letter summary is sparser yet carries the family-specific fine pattern. Smallest k for full genomes; a higher k for short reads.</p></div>
   </aside>
 </section>
 
 <!-- 14 · SPEED =========================================================== -->
-<section class="scene" id="speed" data-theme="light" data-steps="0" data-time="20" data-name="Hız">
+<section class="scene" id="speed" data-theme="light" data-steps="0" data-time="20" data-name-en="Speed" data-name="Hız">
   <div class="frame">
     <p class="eyebrow"><span class="tr">Hız</span><span class="en">Speed</span></p>
     <h2><span class="tr">Hizalama yok. GPU yok.</span><span class="en">No alignment. No GPU.</span></h2>
@@ -291,12 +327,13 @@
     <p class="caption"><span class="tr">Tek bir dizüstü bilgisayar · Apple M2 Pro · Python, scikit-learn</span><span class="en">A single laptop · Apple M2 Pro · Python, scikit-learn</span></p>
   </div>
   <aside class="notes">
-    <p>Ve hepsi çok hızlı: <b>hizalama yok, GPU yok</b>. Tek bir dizüstü bilgisayarda bir genomun öznitelikleri yarım milisaniyede çıkıyor; yeni bir genomu sınıflandırmak bir milisaniyenin altında.</p>
+    <div class="tr"><p>Ve hepsi çok hızlı: <b>hizalama yok, GPU yok</b>. Tek bir dizüstü bilgisayarda bir genomun öznitelikleri yarım milisaniyede çıkıyor; yeni bir genomu sınıflandırmak bir milisaniyenin altında.</p></div>
+    <div class="en"><p>And it is all very fast: <b>no alignment, no GPU</b>. On a single laptop, a genome's features take half a millisecond, and classifying a new genome takes under a millisecond.</p></div>
   </aside>
 </section>
 
 <!-- 15 · TAKE-HOME ======================================================= -->
-<section class="scene" id="takehome" data-theme="light" data-steps="4" data-time="30" data-name="Akılda kalacaklar">
+<section class="scene" id="takehome" data-theme="light" data-steps="4" data-time="30" data-name-en="Take-home" data-name="Akılda kalacaklar">
   <div class="frame">
     <p class="eyebrow"><span class="tr">Akılda kalacak üç şey</span><span class="en">Three things to remember</span></p>
     <ol class="three">
@@ -307,14 +344,17 @@
     <p class="limits b" data-b="4"><span class="tr"><b>Sınırlar:</b> görev cins düzeyinde · veri kamu arşivlerinin örnekleme yanlılığını taşıyor · okumalar yerine bitişik parçalar kullanıldı, dizileme hatası modellenmedi.</span><span class="en"><b>Limits:</b> a genus-level task · data inherit public-archive sampling biases · contiguous fragments stood in for reads; sequencing error was not modelled.</span></p>
   </div>
   <aside class="notes">
-    <p>Akılda kalacak üç şey. [tıkla] Kaos oyunu genomu <b>yorumlanabilir bir resme</b> ve sayılara çeviriyor.</p>
+    <div class="tr"><p>Akılda kalacak üç şey. [tıkla] Kaos oyunu genomu <b>yorumlanabilir bir resme</b> ve sayılara çeviriyor.</p>
     <p>[tıkla] Tam genomda 64 sayı ve düz bir sınır aileyi buluyor; hiç görmediği bir virüsü bile. [tıkla] Ama dizi kısaldıkça bu tutumluluk kayboluyor.</p>
-    <p>[tıkla] Sınırlarımızı da açıkça söyleyelim: görev cins düzeyinde, veri kamu arşivlerinden ve okuma hatalarını henüz modellemedik.</p>
+    <p>[tıkla] Sınırlarımızı da açıkça söyleyelim: görev cins düzeyinde, veri kamu arşivlerinden ve okuma hatalarını henüz modellemedik.</p></div>
+    <div class="en"><p>Three things to remember. [click] The chaos game turns a genome into <b>an interpretable picture</b> and numbers.</p>
+<p>[click] On full genomes, 64 numbers and a straight boundary find the family — even for a virus never seen before. [click] But as sequences get short, that parsimony fades.</p>
+<p>[click] And our limits, stated plainly: the task is genus-level, the data come from public archives, and we have not yet modelled read errors.</p></div>
   </aside>
 </section>
 
 <!-- 16 · THANKS ========================================================== -->
-<section class="scene" id="thanks" data-theme="light" data-steps="0" data-time="15" data-name="Teşekkürler">
+<section class="scene" id="thanks" data-theme="light" data-steps="0" data-time="15" data-name-en="Thank you" data-name="Teşekkürler">
   <div class="frame thanks">
     <div>
       <p class="eyebrow"><span class="tr">Kod, veri listeleri ve bu sunum</span><span class="en">Code, data lists and this presentation</span></p>
@@ -329,7 +369,8 @@
     <div class="qrbox"><img src="assets/img/qr.svg" alt="QR" class="qr"><p class="caption center"><span class="tr">Sunumu telefonunuzda açın</span><span class="en">Open the slides on your phone</span></p></div>
   </div>
   <aside class="notes">
-    <p>Teşekkür ederim. Kodlar, veri listeleri ve bu sunum QR koddaki adreste. Sorularınızı alabilirim.</p>
+    <div class="tr"><p>Teşekkür ederim. Kodlar, veri listeleri ve bu sunum QR koddaki adreste. Sorularınızı alabilirim.</p></div>
+    <div class="en"><p>Thank you. The code, the data lists and this presentation are at the address in the QR code. I'm happy to take your questions.</p></div>
   </aside>
 </section>
 

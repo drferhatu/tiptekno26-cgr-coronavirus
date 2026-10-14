@@ -45,6 +45,8 @@
   const nf = (v, dec = 0) => new Intl.NumberFormat(lang === 'tr' ? 'tr-TR' : 'en-US',
     { minimumFractionDigits: dec, maximumFractionDigits: dec }).format(v);
   const pct = (v, dec = 1) => (lang === 'tr' ? '%' + nf(v, dec) : nf(v, dec) + '%');
+  const T = (tr, en) => (lang === 'en' ? en : tr);
+  const nameOf = (sc) => (lang === 'en' && sc.dataset.nameEn ? sc.dataset.nameEn : sc.dataset.name);
   const getPath = (o, p) => p.split('.').reduce((a, k) => (a == null ? a : a[k]), o);
   const mmss = (sec) => { sec = Math.max(0, Math.round(sec)); return String(Math.floor(sec / 60)).padStart(2, '0') + ':' + String(sec % 60).padStart(2, '0'); };
   const lcg = (seed) => { let s = seed >>> 0; return () => (s = (s * 1664525 + 1013904223) >>> 0) / 4294967296; };
@@ -587,10 +589,10 @@
   function updateNotes() {
     const p = $('notesPanel'); if (p.hidden || cur < 0) return;
     const sc = scenes[cur];
-    $('npTitle').textContent = (cur + 1) + '/' + N + ' · ' + sc.dataset.name + (maxStep(cur) ? '  ·  adım ' + step + '/' + maxStep(cur) : '');
+    $('npTitle').textContent = (cur + 1) + '/' + N + ' · ' + nameOf(sc) + (maxStep(cur) ? '  ·  ' + T('adım ', 'step ') + step + '/' + maxStep(cur) : '');
     $('npPace').innerHTML = paceHTML(cur, timerStart);
     $('npBody').innerHTML = sc.querySelector('.notes') ? sc.querySelector('.notes').innerHTML : '';
-    $('npNext').textContent = cur < N - 1 ? 'Sonraki: ' + scenes[cur + 1].dataset.name : 'Son sahne';
+    $('npNext').textContent = cur < N - 1 ? T('Sonraki: ', 'Next: ') + nameOf(scenes[cur + 1]) : T('Son sahne', 'Last section');
   }
 
   function setLang(l) {
@@ -631,22 +633,29 @@
     document.body.classList.add('presenter');
     const p = document.createElement('div'); p.id = 'presenter';
     p.innerHTML = '<div class="top"><div class="cur" id="pCur">…</div><div style="text-align:right"><div class="clock" id="pClock">00:00</div><div class="pace" id="pPace"></div></div></div>' +
-      '<div class="body" id="pBody"><p>Ana sunum penceresi bekleniyor… (sunumu aynı tarayıcıda açık tutun)</p></div>' +
-      '<div class="bottom"><div id="pNext"></div><div><button id="pPrev" type="button">‹ Geri</button><button id="pNextBtn" type="button">İleri ›</button></div></div>';
+      '<div class="body" id="pBody"><p>' + T('Ana sunum penceresi bekleniyor… (sunumu aynı tarayıcıda açık tutun)', 'Waiting for the main presentation window… (keep it open in the same browser)') + '</p></div>' +
+      '<div class="bottom"><div id="pNext"></div><div><button id="pPrev" type="button"></button><button id="pNextBtn" type="button"></button></div></div>';
     document.body.appendChild(p);
     let st = { i: 0, s: 0, timerStart: null };
     const render = () => {
       const sc = scenes[st.i]; if (!sc) return;
-      $('pCur').textContent = (st.i + 1) + '/' + N + ' · ' + sc.dataset.name + (maxStep(st.i) ? '  ·  adım ' + st.s + '/' + maxStep(st.i) : '');
+      $('pCur').textContent = (st.i + 1) + '/' + N + ' · ' + nameOf(sc) + (maxStep(st.i) ? '  ·  ' + T('adım ', 'step ') + st.s + '/' + maxStep(st.i) : '');
       $('pBody').innerHTML = sc.querySelector('.notes') ? sc.querySelector('.notes').innerHTML : '';
-      $('pNext').textContent = st.i < N - 1 ? 'Sonraki: ' + scenes[st.i + 1].dataset.name : 'Son sahne';
+      $('pNext').textContent = st.i < N - 1 ? T('Sonraki: ', 'Next: ') + nameOf(scenes[st.i + 1]) : T('Son sahne', 'Last section');
+      $('pPrev').textContent = T('‹ Geri', '‹ Back'); $('pNextBtn').textContent = T('İleri ›', 'Next ›');
       tick();
     };
     const tick = () => {
       $('pClock').textContent = mmss(st.timerStart ? (Date.now() - st.timerStart) / 1000 : 0);
       $('pPace').innerHTML = paceHTML(st.i, st.timerStart);
     };
-    listen((m) => { if (m && m.type === 'state') { st = m; render(); } });
+    $('pPrev').textContent = T('‹ Geri', '‹ Back'); $('pNextBtn').textContent = T('İleri ›', 'Next ›');
+    listen((m) => {
+      if (m && m.type === 'state') { st = m; render(); }
+      else if (m && m.type === 'lang' && (m.lang === 'tr' || m.lang === 'en')) {   // follow the main window
+        lang = m.lang; document.documentElement.dataset.lang = lang; document.documentElement.lang = lang; render();
+      }
+    });
     const cmd = (c) => post({ type: 'cmd', cmd: c });
     $('pPrev').onclick = () => cmd('prev'); $('pNextBtn').onclick = () => cmd('next');
     window.addEventListener('keydown', (e) => {
@@ -662,10 +671,13 @@
   function initNotesDoc() {
     document.body.classList.add('notesmode'); document.body.dataset.theme = 'light';
     const doc = document.createElement('div'); doc.id = 'notesDoc';
-    let html = '<h1>Konuşma notları · TIPTEKNO\'26</h1><p class="sub">' + N + ' sahne · toplam ' + mmss(cum[N - 1]) +
-      ' · [tıkla] = kumandaya bas · sunum: ' + D.urls.pages.replace(/^https?:\/\//, '') + '</p>';
+    const other = lang === 'en' ? 'tr' : 'en';
+    let html = '<h1>' + T('Konuşma notları', 'Speaker notes') + ' · TIPTEKNO\'26</h1><p class="sub">' +
+      N + T(' sahne · toplam ', ' sections · total ') + mmss(cum[N - 1]) +
+      T(' · [tıkla] = kumandaya bas', ' · [click] = press the clicker') + ' · ' + D.urls.pages.replace(/^https?:\/\//, '') +
+      ' · <a href="?notes&lang=' + other + '">' + (other === 'en' ? 'English' : 'Türkçe') + '</a></p>';
     scenes.forEach((sc, i) => {
-      html += '<section><h2>' + (i + 1) + '. ' + sc.dataset.name + '<span>' + mmss(cum[i] - times[i]) + '–' + mmss(cum[i]) + '</span></h2>' +
+      html += '<section><h2>' + (i + 1) + '. ' + nameOf(sc) + '<span>' + mmss(cum[i] - times[i]) + '–' + mmss(cum[i]) + '</span></h2>' +
         (sc.querySelector('.notes') ? sc.querySelector('.notes').innerHTML : '') + '</section>';
     });
     doc.innerHTML = html; document.body.appendChild(doc);
