@@ -1,0 +1,6 @@
+# sequences are re-fetched from NCBI (Scripts/01b_fetch_exact_dataset.py), never committed
+Data/fasta/
+Data/*.npz
+__pycache__/
+*.pyc
+.DS_Store

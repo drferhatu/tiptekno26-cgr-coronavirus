@@ -1,0 +1,6 @@
+{
+  "best_model": "SVM-linear",
+  "best_k": 5,
+  "best_acc": 0.9989743589743589,
+  "best_f1": 0.998989898989899
+}

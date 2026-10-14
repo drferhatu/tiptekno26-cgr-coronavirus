@@ -1,0 +1,9 @@
+{
+  "n": 100,
+  "predicted": {
+    "Betacoronavirus": 100
+  },
+  "beta_fraction": 1.0,
+  "best_model": "SVM-linear",
+  "best_k": 5
+}
