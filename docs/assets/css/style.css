@@ -52,6 +52,7 @@ button { font: inherit; color: inherit; }
 
 /* ---------- type ---------- */
 .eyebrow { font-size: calc(var(--u) * 1.35); font-weight: 600; letter-spacing: .015em; color: var(--accent); margin: 0 0 calc(var(--u) * 1.1); }
+.eyebrow .eb2 { font-weight: 500; color: var(--fg2); line-height: 1.6; }
 h1.hero { font-size: calc(var(--u) * 5.8); line-height: 1.04; letter-spacing: -.028em; font-weight: 700; margin: 0 0 calc(var(--u) * 1.6); }
 h2 { font-size: calc(var(--u) * 4.1); line-height: 1.07; letter-spacing: -.024em; font-weight: 700; margin: 0 0 calc(var(--u) * 2.2); }
 h2.h2s { font-size: calc(var(--u) * 3.4); }

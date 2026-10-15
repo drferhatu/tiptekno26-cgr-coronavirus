@@ -2,7 +2,7 @@
 
 **Ferhat Uçar · Elifnur Yüksel** — Software Engineering, Fırat University, Elazığ, Türkiye
 
-*2026 Medical Technologies Congress (TIPTEKNO'26), Special Session on Chaos Theory in Medical Technologies, Gaziantep, Türkiye, 15–17 October 2026.*
+*2026 Medical Technologies Congress (TIPTEKNO'26), Gaziantep, Türkiye, 15–17 October 2026 — Special Session “Chaos Theory in Medical Technologies: Multiscale Approaches from Molecular Dynamics to Clinical Data Security” (chair: Fatih Özkaynak). Presented on 15 October 2026.*
 
 **▶ Presentation:** <https://drferhatu.github.io/tiptekno26-cgr-coronavirus/> (Turkish by default, press <kbd>L</kbd> for English)
 
